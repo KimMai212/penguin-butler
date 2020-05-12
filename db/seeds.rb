@@ -11,99 +11,92 @@ Informations.destroy_all
 penguins = [
   {
     name: "Archy",
-    picture: '1.jpeg'
+    picture: '1.jpg'
     },
   {
     name: "Elvis",
-    picture: '2.jpeg'
+    picture: '2.jpg'
     },
   {
     name: "James",
-    picture: '3.jpeg'
+    picture: '3.jpg'
     },
   {
     name: "Rui",
-    picture: '4.jpeg'
+    picture: '4.jpg'
     },
   {
     name: "Mr. Ho",
-    picture: '5.jpeg'
+    picture: '5.jpg'
     },
   {
     name: "King Freddy",
-    picture: '6.jpeg'
+    picture: '6.jpg'
     },
   {
     name: "Baltasar",
-    picture: '29.jpeg'
+    picture: '7.jpg'
     },
   {
     name: "Leon",
-    picture: '32.jpeg'
+    picture: '8.jpg'
     },
   {
     name: "Dion",
-    picture: '9.jpeg'
+    picture: '9.jpg'
     },
   {
     name: "Andy",
-    picture: '10.jpeg'
+    picture: '10.jpg'
     },
   {
     name: "Felizitas",
-    picture: '11.jpeg'
+    picture: '11.jpg'
     },
   {
     name: "Andrea",
-    picture: '12.jpeg'
+    picture: '12.jpg'
     },
   {
     name: "Ena",
-    picture: '13.jpeg'
+    picture: '13.jpg'
     },
   {
     name: "Boris",
-    picture: '26.jpeg'
+    picture: '14.jpg'
     },
   {
     name: "Rich",
-    picture: '15.jpeg'
+    picture: '15.jpg'
   },
   {
     name: "Linh",
-    picture: '16.jpeg'
+    picture: '16.jpg'
     },
   {
     name: "Zora",
-    picture: '17.jpeg'
+    picture: '17.jpg'
     },
+
   {
-    name: "Meggie",
-    picture: '18.jpeg'
-    },
-    {
-    name: "Marge",
-    picture: '19.jpeg'
-    },
-    {
     name: "Mrs. Sunshine",
     picture: '20.jpeg'
     },
     {
       name: "Petya",
-      picture: '21.jpeg'
+      picture: '21.jpg'
     },
   {
     name: "Sarah",
-    picture: '22.jpeg'
+    picture: '22.jpg'
     },
   {
     name: "Toni",
-    picture: '23.jpeg'
+    picture: '18.jpg'
   },
   {
     name: "Zuza",
-    picture: '24.jpeg'
+    picture: '19.jpg'
   }
 ]
 informations = ["strong", "tall", "nice", "shy", "drug addicted", "alcoholic", "smoker", "lazy", "loud", "politly", "gay", "pornstar"]
@@ -137,7 +130,7 @@ penguins.each { |penguin|
     3.times do |n|
       desc = ["is a little bit", "thinks he/she is", "wishes to be ","could be", "want to be"].sample
       information = Informations.all.sample
-      Dose.create!(
+    Pen.create!(
         description: desc,
         penguin: created,
         information: information )
