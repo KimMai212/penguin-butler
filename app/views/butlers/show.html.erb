@@ -8,7 +8,8 @@
     <div class="modal hide" id="aboutModal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">✕</button>
-        <h3>Name</h3>
+        <h3><%= @butler.name %></h3>
+      </div>
       </div>
          <div class="modal-body" style="text-align:center;">
           <div class="row-fluid">
@@ -16,17 +17,17 @@
               <div id="modalTab">
                 <div class="tab-content">
                   <div class="tab-pane active" id="about">
-                  <img src="/app/assent/images" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                  <h3 class="media-heading">Name <small> From...</small></h3>
+                  <img src="<%= image_url(@butler.picture) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                  <h3 class="media-heading"><%= @butler.name %> <small><%= @butler.city %><%= @butler.country %></small></h3>
                     <span><strong>Skills: </strong></span>
-                    <span class="label label-warning">Years of Experience</span>
-                    <span class="label label-info">Academic Degree</span>
-                    <span class="label label-info">Age</span>
+                    <span class="label label-warning"><%= @butler.years_of_experience %></span>
+                    <span class="label label-info"><%= @butler.academic_grade %></span>
+                    <span class="label label-info"><%= @butler.age %></span>
                   </center>
                   <hr>
                     <center>
                       <p class="text-left"><strong>Bio: </strong><br>
-                      BLABLABLABLABLABLA</p>
+                      <%= @butler.description %></p>
                       <br>
                     </center>
                   </div>
@@ -37,4 +38,3 @@
         </div>
       </div>
   </div>
-</div>
