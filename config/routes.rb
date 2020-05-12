@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
   resources :bookings, except: :create
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   get "/search", to: "butlers#search"
 end
