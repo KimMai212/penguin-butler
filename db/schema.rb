@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_184321) do
+ActiveRecord::Schema.define(version: 2020_05_12_124056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 2020_05_11_184321) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "butlers_id", null: false
-    t.index ["butlers_id"], name: "index_bookings_on_butlers_id"
+    t.bigint "butler_id", null: false
+    t.string "status"
+    t.index ["butler_id"], name: "index_bookings_on_butler_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -37,6 +38,10 @@ ActiveRecord::Schema.define(version: 2020_05_11_184321) do
     t.string "academic_grade"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,8 +51,17 @@ ActiveRecord::Schema.define(version: 2020_05_11_184321) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "butlers", column: "butlers_id"
+  add_foreign_key "bookings", "butlers"
   add_foreign_key "bookings", "users"
 end
