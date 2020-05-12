@@ -15,9 +15,13 @@ n = 1
     description: Faker::Quote.most_interesting_man_in_the_world,
     price: Faker::Number.decimal(l_digits: 2),
     age: Faker::Number.within(range: 18..70),
-    picture: "#{n}.jpg"
+    picture: "#{n}.jpg",
     years_of_experience: Faker::Number.within(range: 0..60),
-    academic_grade: Faker::Educator.degree
+    academic_grade: Faker::Educator.degree,
+    address: Faker::Address.street_address,
+    zipcode: Faker::Address.zip,
+    city: Faker::Address.city,
+    country: Faker::Address.country
   })
   n += 1
 end
