@@ -1,0 +1,40 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <div class="row">
+    <div class="modal hide" id="aboutModal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">✕</button>
+        <h3><%= @butler.name %></h3>
+      </div>
+      </div>
+         <div class="modal-body" style="text-align:center;">
+          <div class="row-fluid">
+            <div class="span10 offset1">
+              <div id="modalTab">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="about">
+                  <img src="<%= image_url(@butler.picture) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                  <h3 class="media-heading"><%= @butler.name %> <small><%= @butler.city %><%= @butler.country %></small></h3>
+                    <span><strong>Skills: </strong></span>
+                    <span class="label label-warning"><%= @butler.years_of_experience %></span>
+                    <span class="label label-info"><%= @butler.academic_grade %></span>
+                    <span class="label label-info"><%= @butler.age %></span>
+                  </center>
+                  <hr>
+                    <center>
+                      <p class="text-left"><strong>Bio: </strong><br>
+                      <%= @butler.description %></p>
+                      <br>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

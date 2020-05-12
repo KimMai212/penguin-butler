@@ -8,7 +8,6 @@
 require 'faker'
 Butler.destroy_all
 n = 1
-
 20.times do
   Butler.create({
     name: Faker::FunnyName.name,
