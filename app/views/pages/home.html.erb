@@ -3,7 +3,7 @@
 
 <div class="banner home-banner">
 <div class="search-section">
-  <h1 class="search-title" > You are looking for a penguin batler? </h1>
+  <h1 class="search-title" > You are looking for a penguin butler? </h1>
   <h2 class="search-title" > Then you are on a right place... </h2>
   <h3 class="search-title">
     <span id="banner-typed-text"></span>
@@ -23,21 +23,21 @@
 
   <h1> Our Top Batlers</h1>
   <div class="row">
-  <% @top_batlers.each do |batler| %>
+  <% @top_butlers.each do |butler| %>
     <div class="card col-md-4 p-3" style="height: 600px;" data-aos="zoom-in">
-      <div class="col" style="background-image: url('<%= image_path batler.picture %>'); background-size: cover;">
-         <h1 class="banner-title"><%= batler.name %></h1>
+      <div class="col" style="background-image: url('<%= image_path butler.picture %>'); background-size: cover;">
+         <h1 class="banner-title"><%= butler.name %></h1>
       </div>    
     </div>
   <% end %>
 </div>
 
-<h1> Our List Of Batlers</h1>
+<h1> Our List Of Butlers</h1>
 <div class="row">
-<% @batlers.each do |batler| %>
+<% @butlers.each do |butler| %>
   <div class="card col-md-4 p-3" style="height: 600px;" data-aos="zoom-in">
-    <div class="col" style="background-image: url('<%= image_path batler.picture %>'); background-size: cover;">
-       <h1 class="banner-title"><%= batler.name %></h1>
+    <div class="col" style="background-image: url('<%= image_path butler.picture %>'); background-size: cover;">
+       <h1 class="banner-title"><%= butler.name %></h1>
     </div>    
   </div>
 <% end %>
