@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 Penguin.destroy_all
-Ingredient.destroy_all
+Informations.destroy_all
 penguins = [
   {
     name: "Archy",
@@ -125,7 +125,7 @@ penguins.each { |penguin|
       years_of_experience = Faker::Butler.review
       rating = rand (1..10)
       Years.create!(
-        years_of_experience: years_of_experience)
+      years_of_experience: years_of_experience)
     end
 
     20.times do |n|
