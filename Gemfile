@@ -31,6 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+# gem 'materialize-sass'
+gem 'material-sass', '~> 4.1', '>= 4.1.1'
+gem 'materialize-form', '~> 1.0', '>= 1.0.8'
+# gem 'sass', '~> 3.7', '>= 3.7.4'
 
 group :development, :test do
   gem 'pry-byebug'
