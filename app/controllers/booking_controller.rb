@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-
-    def create
+   def create
       @penguin = Penguin.find(params[:penguin_id])
       @booking = Booking.new(booking_params)
       @booking.penguin = @penguin
