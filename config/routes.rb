@@ -9,11 +9,9 @@ Rails.application.routes.draw do
  #   root to: 'pages#home'
 #  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
-  resources :butlers do
-    resources :bookings, only: :create
-  end
-  resources :bookings, except: :create
+
+  resources :butlers
+  resources :bookings
 
   get "/search", to: "butlers#search"
   get "/dashboard", to: "dashboards#index"
