@@ -1,7 +1,29 @@
 .footer {
+
+  bottom: 0px;
+  text-align: center;
   background-color: $primary;
   color: $light;
   width: 100%;
   margin-bottom: 0;
-  padding: 50px;
+  padding: 20px;
 }
+
+.lischte {
+  display: inline;
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+}
+
+.fa {
+  color: rgb(180,180,180);
+  padding: 0;
+  font-size: 0px;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto
+}
+
+.fa:hover {  color: rgb(210, 21, 230);}
