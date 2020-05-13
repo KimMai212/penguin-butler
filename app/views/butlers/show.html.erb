@@ -1,40 +1,48 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <div class="container">
-  <div class="penguin-main-card d-flex mt-3 align-items-center justify-content-between" style="width:60%">
-    <h2><%= @butler.name %></h2>
-    <div class="user-infos ml-5 text-center">
-      <!-- <img height="500" width="500" class="avatar-large" src="<%= image_url(@butler.picture) %>" /> -->
-       <div class="card-image" style="background-image: url(<%= image_url(@butler.picture) %>);"></div>
-    </div>
-  </div>
-  <div class="d-flex penguin-all">
-    <div>
-      <p class="border-bottom pb-3 mt-3">This is <%= @butler.name %> from <%= @butler.city %>,<%= @butler.country %> . <%= @butler.description %></p>
-      <div class="d-flex justify-content-between pb-3">
-        <div id="equipments">
-          <p><strong>Skills</strong></p>
-          <div class="d-flex mt-4">
-            <div>
-              <div class="d-flex penguin-skills">
-                <img height="50"  width="50" src="<%= image_url('experience.png') %>" />
-                  <p class="none">Years of Experiance: <%= @butler.years_of_experience %></p>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="d-flex mt-3 justify-content-between align-items-end mb-5">
+        <h2><%= @butler.name %></h2>
+        <div class="ml-5 text-center">
+          <div class="profile-picture" style="background-image: url(<%= image_url(@butler.picture) %>);"></div>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="col-md-8">
+          <p class="border-bottom pb-3 mt-3">This is <%= @butler.name %> from <%= @butler.city %>,<%= @butler.country %> . <%= @butler.description %></p>
+          <div class="d-flex justify-content-between pb-3">
+            <div id="equipments">
+              <p><strong>Skills</strong></p>
+              <div class="d-flex mt-4">
+                <div>
+                  <div class="d-flex penguin-skills">
+                    <img height="50"  width="50" src="<%= image_url('experience.png') %>" />
+                    <p class="none">Years of Experiance: <%= @butler.years_of_experience %></p>
+                  </div>
+                  <div class="d-flex penguin-skills">
+                    <img height="50" width="50" src="<%= image_url('academic.png') %>" />
+                    <p>Academical Grade: <%= @butler.academic_grade %></p>
+                  </div>
+                  <div class="d-flex penguin-skills">
+                    <img height="50" width="50" src="<%= image_url('age.png') %>" />
+                    <p>Age: <%= @butler.age %></p>
+                  </div>
+                </div>
               </div>
-              <div class="d-flex penguin-skills">
-                <img height="50" width="50" src="<%= image_url('academic.png') %>" />
-                  <p>Academical Grade: <%= @butler.academic_grade %></p>
-              </div>
-              <div class="d-flex penguin-skills">
-              <img height="50" width="50" src="<%= image_url('age.png') %>" />
-                  <p>Age: <%= @butler.age %></p>
-              </div>
-            </div>
             </div>
           </div>
-       </div>
+        </div>
+        <div class="col-md-4 booking-form rounded p-4">
+          <h3 class="pb-3">Book <%= @butler.name %>!</h3>
+          <b><%= @butler.price %> € per day</b>
+          <%= simple_form_for(@booking) do |f| %>
+            <%= f.hidden_field :penguin_id, value: @butler.id %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.submit 'Book this Penguin', class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-

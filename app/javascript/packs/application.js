@@ -16,7 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+//= require datetime_picker_input
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -25,6 +25,19 @@ require("channels")
 // External imports
 import "bootstrap";
 
+//Stimulus Flatpickr
+// import { Application } from 'stimulus'
+// // import Flatpickr
+// import Flatpickr from 'stimulus-flatpickr'
+
+// import { definitionsFromContext } from 'stimulus/webpack-helpers'
+// const application = Application.start()
+// const context = require.context('../controllers', true, /\.js$/)
+// application.load(definitionsFromContext(context))
+
+// // Manually register Flatpickr as a stimulus controller
+// application.register('flatpickr', Flatpickr)
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,3 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import "controllers"
