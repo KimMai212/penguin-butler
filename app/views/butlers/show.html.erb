@@ -6,11 +6,13 @@
 <div class="container">
   <div class="penguin-main-card d-flex mt-3 align-items-center justify-content-between" style="width:60%">
     <h2><%= @butler.name %></h2>
-    <div class="user-infos ml-5 text-center">
+<!--     <div class="user-infos ml-5 text-center"> -->
       <!-- <img height="500" width="500" class="avatar-large" src="<%= image_url(@butler.picture) %>" /> -->
        <div class="card-image" style="background-image: url(<%= image_url(@butler.picture) %>);"></div>
-    </div>
+   <!--  </div> -->
   </div>
+  <div class="card-image" style="background-image: url(<%= image_url(@butler.picture) %>)"></div>
+   <!--  </div> -->
   <div class="d-flex penguin-all">
     <div>
       <p class="border-bottom pb-3 mt-3">This is <%= @butler.name %> from <%= @butler.city %>,<%= @butler.country %> . <%= @butler.description %></p>
