@@ -1,5 +1,15 @@
 .form-control {
   &.transparent-input {
-    border-color: #fff;
+    border-color: $black;
+  }
+}
+
+.form-inline {
+  input[type="text"] {
+    border-right: 0px;
+    border-radius: 2px 0 0 2px;
+  }
+  input[type="submit"] {
+    border-radius: 0 2px 2px 0;
   }
 }
