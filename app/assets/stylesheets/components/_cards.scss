@@ -20,21 +20,24 @@
     &:hover {
       color: $primary--light;
       text-decoration: none;
-      .card-image {
-        background-size: 110%;
+      .card {
+        width: 110%;
+        z-index: 100;
       }
     }
   }
   .card {
     height: 350px;
+    width: 100%;
     color: $black;
     padding: 215px 15px 15px;
+    transition: all .3s;
     h3 {
       color: $primary;
       margin-top: 15px;
     }
     .card-image {
-      background-size: 100%;
+      background-size: cover;
       height: 200px;
       background-position: center;
       transition: all .3s;
@@ -42,6 +45,7 @@
       position: absolute;
       left: 0;
       top: 0;
+      background-repeat: no-repeat;
     }
   }
 }
