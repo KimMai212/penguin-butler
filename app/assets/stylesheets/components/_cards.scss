@@ -21,8 +21,10 @@
       color: $primary--light;
       text-decoration: none;
       .card {
-        width: 110%;
-        z-index: 100;
+        transform: scale(1,15);
+        margin: 0 auto;
+        transition: transform .2s;
+
       }
     }
   }
