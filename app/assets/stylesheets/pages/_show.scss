@@ -1,0 +1,33 @@
+.profile-picture {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   background-size: cover;
+   background-position: center;
+  box-shadow: 0 2px 30px rgba(0,0,0,.1);
+}
+
+
+#description{
+    background: $white;
+    padding: 50px;
+    border-radius: 17px;
+    box-shadow: 0 2px 30px rgba(0,0,0,.1);
+
+    margin-bottom: 25px;
+}
+
+#top {
+    background: $white;
+    padding: 50px;
+    border-radius: 17px;
+    box-shadow: 0 2px 30px rgba(0,0,0,.1);
+
+    margin-bottom: 25px;
+}
+
+h1 {
+   font-family: 'Bold 700';
+  font-weight: 200;
+  font-size: 50px;
+}
