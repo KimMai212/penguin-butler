@@ -33,6 +33,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'datetime_picker_input'
 
 group :development, :test do
   gem 'pry-byebug'
