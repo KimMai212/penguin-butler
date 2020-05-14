@@ -9,7 +9,7 @@ require 'faker'
 Butler.destroy_all
 n = 1
 20.times do
-  Butler.create({
+  butler = Butler.create({
     name: Faker::FunnyName.name,
     description: Faker::Quote.most_interesting_man_in_the_world,
     price: Faker::Number.decimal(l_digits: 2),
@@ -22,5 +22,6 @@ n = 1
     city: Faker::Address.city,
     country: Faker::Address.country
   })
+  butler.photo.attach(io: "../assets/images/#{i}.jpg", filename: "#{butler.name}.jpg", content_type: 'image/jpeg')
   n += 1
 end

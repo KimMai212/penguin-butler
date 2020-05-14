@@ -2,6 +2,7 @@ class Butler < ApplicationRecord
   #geocoded_by :address
   #after_validation :geocode, if: :address_changed?
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
   #has_many :reviews, through: :bookings
   validates :description, presence: true
   validates :name, presence: true
