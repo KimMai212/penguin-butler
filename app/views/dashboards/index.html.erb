@@ -1,64 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 mt-5">
+      <h1>Dashboard</h1>
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My penguin bookings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My past bookings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">My favorites</a>
-  </li>
-</ul>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Upcoming bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+        </li>
+      </ul>
 
-<!-- Tab panes -->
-<div class="tab-content">
-
-  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <div class="container pt-5">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h1 class="text-center mb-4">My penguin bookings:</h1>
-          <div class="card-wrap">
-            <% @bookings.each do |b| %>
-            <%= link_to booking_path(b) do %>
-            <div class="card shadow">
-              <div class="card-image" style="background-image: url(<%= image_url(b.butler.picture) %>);"></div>
-              <h3><%= b.butler.name %>, <%= b.butler.age %> </h3>
-              <p><%= b.butler.description %></p>
-            </div>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="container pt-5">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h1 class="text-center mb-4">My past bookings:</h1>
-          <div class="card-wrap">
-            <% @past_bookings.each do |b| %>
-
-              <%= link_to booking_path(b) do %>
-                <div class="card-product">
-                  <%= image_tag(b.butler.picture) %>
-                  <div class="card-product-infos">
-                    <h2><%= b.butler.name %></h2>
-                    <p><%= b.butler.description %></p>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="container pt-5">
+            <div class="row justify-content-center">
+              <div class="col">
+                <h2 class="mb-4">Upcoming bookings:</h2>
+                <div class="card-wrap products">
+                  <% @upcoming_bookings.each do |b| %>
+                  <%= link_to booking_path(b) do %>
+                  <div class="card-product">
+                    <%= image_tag(b.butler.picture) %>
+                    <div class="card-product-infos">
+                      <h2><%= b.butler.name %></h2>
+                      <b><%= b.price %> €</b>
+                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                    </div>
                   </div>
+                  <% end %>
+                  <% end %>
+                </div>
               </div>
-              <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
+
+        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="container pt-5">
+            <div class="row justify-content-center">
+              <div class="col">
+                <h2 class="mb-4">My past bookings:</h2>
+                <div class="card-wrap products">
+                  <% @past_bookings.each do |b| %>
+                  <%= link_to booking_path(b) do %>
+                  <div class="card-product">
+                    <%= image_tag(b.butler.picture) %>
+                    <div class="card-product-infos">
+                      <h2><%= b.butler.name %></h2>
+                      <b><%= b.price %> €</b>
+                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                    </div>
+                  </div>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">4</div>
       </div>
+
     </div>
   </div>
-
-  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">4</div>
 </div>

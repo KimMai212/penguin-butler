@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
       if @booking.end_date && @booking.start_date
         @booking.price = (@booking.end_date - @booking.start_date).to_f * @booking.butler.price.to_f
       else
-        @booking.value = 0
+        @booking.price = @butler.price
       end
       if @booking.save
         redirect_to dashboard_path
