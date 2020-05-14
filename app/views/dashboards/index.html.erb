@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div id="dashboard" class="col-md-10 mt-5">
+  <div class="row justify-content-center">
+    <div id="dashboard" class="col col-md-10 mt-5 shadow panel">
       <div class="header">
-        <h1>Dashboard</h1>
+        <h1 class="text-center mb-3">Dashboard</h1>
       </div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -32,7 +32,7 @@
                     <div class="card-product-infos">
                       <h2><%= b.butler.name %></h2>
                       <b><%= b.price %> €</b>
-                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                      <p><%= b.start_date.strftime("%d.%m.%Y") %> – <%= b.end_date.strftime("%d.%m.%Y") %></p>
                     </div>
                   </div>
                   <% end %>

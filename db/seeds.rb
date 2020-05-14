@@ -32,8 +32,4 @@ n = 1
   n += 1
 end
 
-User.create({
-  email: "test@test.de",
-  password: "password"
-})
-puts "Test user created. Seeding completed!"
+puts "Seeding completed!"
