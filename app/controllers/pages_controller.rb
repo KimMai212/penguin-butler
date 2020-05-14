@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def home
     @top_butlers = Butler.all.first(6) 
     @butlers = Butler.all
+    @is_loggedin = current_user
   end
   def search
     @butlers = Butler.where("name LIKE ?", "%#{params[:keyword]}%" )
