@@ -1,0 +1,15 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h1>Edit booking dates</h1>
+      <div class="wrap">
+        <%= simple_form_for(@booking) do |f| %>
+          <%= f.input :start_date, as: :string, html5: true, input_html: { id: "range_start" } %>
+          <%= f.input :end_date, as: :string, html5: true, input_html: { id: "range_end" } %>
+          <%= f.submit "Edit dates!", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

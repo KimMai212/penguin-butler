@@ -9,16 +9,17 @@
   color: $black;
 }
 
-.nav-tabs .nav-link {
-   border-radius: 8px;
+.nav-tabs {
+  border-bottom: none;
+  .nav-link {
+    border-radius: 8px;
+  }
 }
 
 .nav-dash{
   padding: 5px;
   border-radius: 8px;
-  margin-top: 25px;
-  margin-right: 10px;
-  margin-bottom: 25px;
+  margin: 25px 5px 0;
   transition: all .3s;
 
   &:hover{
