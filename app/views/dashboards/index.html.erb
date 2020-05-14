@@ -31,7 +31,7 @@
                     <div class="card-product-infos">
                       <h2><%= b.butler.name %></h2>
                       <b><%= b.price %> €</b>
-                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                      <p><%= b.start_date.strftime("%d.%m.%Y") %> – <%= b.end_date.strftime("%d.%m.%Y") %></p>
                     </div>
                   </div>
                   <% end %>

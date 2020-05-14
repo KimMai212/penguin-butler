@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 Butler.destroy_all
+User.destroy_all
+Booking.destroy_all
+
 n = 1
 20.times do
   butler = Butler.create({
@@ -22,6 +25,6 @@ n = 1
     city: Faker::Address.city,
     country: Faker::Address.country
   })
-  butler.photo.attach(io: "../assets/images/#{i}.jpg", filename: "#{butler.name}.jpg", content_type: 'image/jpeg')
+  butler.photo.attach(io: File.open("app/assets/images/#{n}.jpg"), filename: "#{butler.name}.jpg", content_type: 'image/jpeg')
   n += 1
 end
