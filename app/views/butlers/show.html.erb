@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="d-flex mt-3 justify-content-between align-items-center mt-5 mb-3 shadow panel profile-main">
-        <div class="profile-picture" style="background-image: url(<%= image_url(@butler.picture) %>);"></div>
+        <div class="profile-picture" style="background-image: url('<%= cl_image_path @butler.photo.key, height: 500, width: 500 %>');"></div>
         <h1><%= @butler.name %></h1>
       </div>
       <div class="d-flex">
