@@ -3,6 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+// import 'flatpickr/dist/flatpickr.css';
+// import 'nouislider/distribute/nouislider.css';
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -47,3 +50,8 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 import "controllers"
+
+
+
+///////////////////////////////////////////
+import "plugins/flatpickr"

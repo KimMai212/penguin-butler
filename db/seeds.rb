@@ -10,14 +10,15 @@ Butler.destroy_all
 User.destroy_all
 Booking.destroy_all
 
+puts "All entries have been deleted."
+
 n = 1
 20.times do
-  butler = Butler.create({
+  butler = Butler.new({
     name: Faker::FunnyName.name,
     description: Faker::Quote.most_interesting_man_in_the_world,
     price: Faker::Number.decimal(l_digits: 2),
     age: Faker::Number.within(range: 18..70),
-    picture: "#{n}.jpg",
     years_of_experience: Faker::Number.within(range: 0..60),
     academic_grade: Faker::Educator.degree,
     address: Faker::Address.street_address,
@@ -26,5 +27,9 @@ n = 1
     country: Faker::Address.country
   })
   butler.photo.attach(io: File.open("app/assets/images/#{n}.jpg"), filename: "#{butler.name}.jpg", content_type: 'image/jpeg')
+  butler.save!
+  puts "#{butler.name} was created!"
   n += 1
 end
+
+puts "Seeding completed!"

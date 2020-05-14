@@ -8,7 +8,6 @@ class Butler < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :address, presence: true
-  validates :picture, presence: true
   validates :city, presence: true
   validates :country, presence: true
 end
