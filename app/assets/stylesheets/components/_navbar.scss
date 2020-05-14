@@ -1,18 +1,27 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar {
   background: white;
   height: 60px;
+  justify-content: flex-end;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
 }
 
-.nav-item:hover {
-    transform: scale(1.1);
-    z-index: 100;
+.navbar-light {
+  .navbar-brand {
+    position: absolute;
+    left: calc(50% - 20px);
+    right: calc(50% - 20px);
+    margin: 0;
+    width: 40px;
   }
+}
+
+.nav-item.show {
+  cursor: pointer;
+}

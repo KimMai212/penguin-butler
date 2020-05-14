@@ -2,18 +2,30 @@
   color: $black;
   text-align: center;
   background-color: $white;
-  border-color: ¢white;
+  border-color: $white;
  }
-a {
-  color: black;
-
-}
 
 .nav-link:hover {
-  color: §black;
+  color: $black;
 }
 
-.nav-tabs .nav-link {
-   border-radius: 8px;
+.nav-tabs {
+  border-bottom: none;
+  .nav-link {
+    border-radius: 8px;
+  }
 }
+
+.nav-dash{
+  padding: 5px;
+  border-radius: 8px;
+  margin: 25px 5px 0;
+  transition: all .3s;
+
+  &:hover{
+    transform: scale(1.1);
+    z-index: 100;
+  }
+}
+
 
