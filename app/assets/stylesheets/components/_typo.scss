@@ -1,3 +1,7 @@
+body {
+  color: $black;
+}
+
 h1,
 h2,
 h3,
@@ -13,8 +17,8 @@ h6,
   font-weight: 400;
 }
 
-body {
-  color: $black;
+h3 {
+  font-size: 24px;
 }
 
 a {

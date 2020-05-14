@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, except: %i[create index]
    def create
       @butler = Butler.find(params[:booking][:butler_id])
       @booking = Booking.new(booking_params)
@@ -22,21 +23,23 @@ class BookingsController < ApplicationController
     end
 
     def show
-      set_booking
       @butler = @booking.butler
     end
 
+    def edit; end
+
     def update
-      set_booking
-      @booking.status = "Pending host validation"
-      @booking.save!
-      redirect_to booking_path(@booking)
+      @booking.update(booking_params)
+      if @booking.save!
+        redirect_to booking_path(@booking)
+      else
+        render edit
+      end
     end
 
     def destroy
-      set_booking
       @booking.destroy
-      redirect_to root_path
+      redirect_to dashboard_path
     end
 
     private
@@ -47,11 +50,5 @@ class BookingsController < ApplicationController
 
     def set_booking
       @booking = Booking.find(params[:id])
-    end
-
-  private
-
-    def booking_params
-      params.require(:booking).permit(:start_date, :end_date)
     end
 end
