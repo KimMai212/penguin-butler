@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 mt-5">
-      <h1>Dashboard</h1>
-
+    <div id="dashboard" class="col-md-10 mt-5">
+      <div class="header">
+        <h1>Dashboard</h1>
+      </div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
+        <li class="nav-dash">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Upcoming bookings</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-dash">
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past bookings</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-dash">
           <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
         </li>
       </ul>
@@ -22,7 +23,7 @@
           <div class="container pt-5">
             <div class="row justify-content-center">
               <div class="col">
-                <h2 class="mb-4">Upcoming bookings:</h2>
+                <h3 class="mb-4">Upcoming bookings:</h3>
                 <div class="card-wrap products">
                   <% @upcoming_bookings.each do |b| %>
                   <%= link_to booking_path(b) do %>
@@ -46,7 +47,7 @@
           <div class="container pt-5">
             <div class="row justify-content-center">
               <div class="col">
-                <h2 class="mb-4">My past bookings:</h2>
+                <h3 class="mb-4">My past bookings:</h3>
                 <div class="card-wrap products">
                   <% @past_bookings.each do |b| %>
                   <%= link_to booking_path(b) do %>
