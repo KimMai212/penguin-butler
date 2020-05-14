@@ -15,7 +15,6 @@
   border: 3px solid $primary;
 }
 
-
 .panel {
   background: $white;
   padding: 50px;
@@ -31,8 +30,9 @@
   position: relative;
   height: 100px;
   padding: 0 120px;
-  h1 {
+}
+
+h1 {
     margin-bottom: 0;
     font-size: 46px;
   }
-}
