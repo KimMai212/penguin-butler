@@ -35,8 +35,8 @@
           <b><%= @butler.price %> € per day</b>
           <%= simple_form_for(@booking) do |f| %>
             <%= f.hidden_field :butler_id, value: @butler.id %>
-            <%= f.input :start_date, as: :date, html5: true %>
-            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.input :start_date, as: :string, html5: true, input_html: { id: "range_start" } %>
+            <%= f.input :end_date, as: :string, html5: true, input_html: { id: "range_end" } %>
             <%= f.submit 'Book this Penguin', class: "btn btn-primary" %>
           <% end %>
         </div>
