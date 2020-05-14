@@ -34,6 +34,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'datetime_picker_input'
+gem 'cloudinary', '~> 1.12.0'
+
+#Security
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'pry-byebug'

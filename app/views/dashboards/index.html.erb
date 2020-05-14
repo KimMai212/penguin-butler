@@ -27,7 +27,7 @@
                   <% @upcoming_bookings.each do |b| %>
                   <%= link_to booking_path(b) do %>
                   <div class="card-product">
-                    <%= image_tag(b.butler.picture) %>
+                    <%= cl_image_tag b.butler.photo.key, height: 200, width: 200 %>
                     <div class="card-product-infos">
                       <h2><%= b.butler.name %></h2>
                       <b><%= b.price %> €</b>
