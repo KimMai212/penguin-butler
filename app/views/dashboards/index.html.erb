@@ -22,18 +22,18 @@
           <h1 class="text-center mb-4">My penguin bookings:</h1>
           <div class="card-wrap">
             <% @bookings.each do |b| %>
-              <%= link_to booking_path(b) do %>
-                <div class="card shadow">
-                  <div class="card-image" style="background-image: url(<%= image_url(b.picture) %>);"></div>
-                  <h3><%= b.name %>, <%= b.age %> </h3>
-                  <p><%= b.description %></p>
-                </div>
-              <% end %>
+            <%= link_to booking_path(b) do %>
+            <div class="card shadow">
+              <div class="card-image" style="background-image: url(<%= image_url(b.butler.picture) %>);"></div>
+              <h3><%= b.butler.name %>, <%= b.butler.age %> </h3>
+              <p><%= b.butler.description %></p>
+            </div>
+            <% end %>
             <% end %>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 
   <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -42,13 +42,16 @@
         <div class="col-md-10">
           <h1 class="text-center mb-4">My past bookings:</h1>
           <div class="card-wrap">
-            <% @bookings.each do |b| %>
+            <% @past_bookings.each do |b| %>
+
               <%= link_to booking_path(b) do %>
-                <div class="card shadow">
-                  <div class="card-image" style="background-image: url(<%= image_url(b.picture) %>);"></div>
-                  <h3><%= b.name %>, <%= b.age %> </h3>
-                  <p><%= b.description %></p>
-                </div>
+                <div class="card-product">
+                  <%= image_tag(b.butler.picture) %>
+                  <div class="card-product-infos">
+                    <h2><%= b.butler.name %></h2>
+                    <p><%= b.butler.description %></p>
+                  </div>
+              </div>
               <% end %>
             <% end %>
           </div>
