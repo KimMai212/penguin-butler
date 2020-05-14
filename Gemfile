@@ -35,6 +35,9 @@ gem 'simple_form'
 gem 'devise'
 gem 'datetime_picker_input'
 
+#Security
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
