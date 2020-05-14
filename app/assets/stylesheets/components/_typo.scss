@@ -17,3 +17,11 @@ h6,
 body {
   color: $black;
 }
+
+a {
+  color: $primary;
+  transition: all .3s;
+  &:hover {
+    color: $primary--light;
+  }
+}
