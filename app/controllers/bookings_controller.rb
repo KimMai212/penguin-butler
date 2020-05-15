@@ -12,8 +12,10 @@ class BookingsController < ApplicationController
         @booking.price = @butler.price
       end
       if @booking.save
+        flash[:success] = "Booking completed!"
         redirect_to dashboard_path
       else
+        flash[:alert] = "Something went wrong. Please try again!"
         redirect_to butler_path(@butler)
       end
     end
@@ -31,9 +33,10 @@ class BookingsController < ApplicationController
     def update
       @booking.update(booking_params)
       if @booking.save!
-        flash[:alert] = "Booking edited!"
+        flash[:success] = "Booking edited!"
         redirect_to booking_path(@booking)
       else
+        flash[:alert] = "Something went wrong. Please try again!"
         render edit
       end
     end

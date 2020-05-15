@@ -3,11 +3,6 @@
     <div id="dashboard" class="col col-md-10 mt-5 shadow panel">
       <div class="header">
         <h1 class="text-center mb-3">Dashboard</h1>
-        <% flash.each do |type, msg| %>
-          <div class="alert alert-danger">
-            <%= msg %>
-          </div>
-        <% end %>
       </div>
       <!-- Nav tabs -->
       <div class="d-flex justify-content-center">
@@ -27,7 +22,7 @@
         <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="container pt-5">
             <div class="row justify-content-center">
-              <div class="col">
+              <div class="col text-center">
                 <% unless @upcoming_bookings.empty? %>
                 <h3 class="mb-4">My upcoming bookings:</h3>
                 <div class="card-wrap products">
@@ -56,7 +51,7 @@
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <div class="container pt-5">
             <div class="row justify-content-center">
-              <div class="col">
+              <div class="col text-center">
                 <% unless @past_bookings.empty? %>
                 <h3 class="mb-4">My past bookings:</h3>
                 <div class="card-wrap products">
@@ -74,7 +69,7 @@
                   <% end %>
                 </div>
                 <% else %>
-                <h3>No past bookings yet!</h3>
+                <h3 class="mb-3">No past bookings yet!</h3>
                 <%= link_to "Book a penguin butler now", search_path, class: "btn btn-primary" %>
                 <% end %>
               </div>
