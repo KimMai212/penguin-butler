@@ -1,3 +1,7 @@
+body {
+  color: $black;
+}
+
 h1,
 h2,
 h3,
@@ -10,10 +14,17 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
 }
 
-body {
-  color: $black;
+h3 {
+  font-size: 24px;
+}
+
+a {
+  color: $primary;
+  transition: all .3s;
+  &:hover {
+    color: $primary--light;
+  }
 }

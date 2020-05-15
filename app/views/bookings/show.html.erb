@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 mt-5 panel shadow">
+      <h1 class="mb-3">Your booking # <%= @booking.id %></h1>
+      <div class="profile-picture right" style="background-image: url('<%= cl_image_path @booking.butler.photo.key, height: 500, width: 500 %>');"></div>
+      <table class="booking-table">
+        <tr>
+          <td>Penguin</td>
+          <td><b><%= @butler.name %></b></td>
+        </tr>
+        <tr>
+          <td>From</td>
+          <td><%= @booking.start_date.strftime("%d.%m.%Y") %></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><%= @booking.end_date.strftime("%d.%m.%Y") %></td>
+        </tr>
+        <tr>
+          <td>Total cost</td>
+          <td><b><%= @booking.price %> €</b></td>
+        </tr>
+      </table>
+      <div class="justify-content-end d-flex align-items-center">
+        <%= link_to "Edit booking", edit_booking_path(@booking), class: "btn btn-secondary mr-4" %>
+        <%= link_to "Cancel booking", booking_path(@booking), method: :delete %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <%= link_to "< Back to dashboard", dashboard_path %>
+  </div>
+</div>

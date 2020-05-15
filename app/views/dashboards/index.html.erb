@@ -1,42 +1,48 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-10 mt-5">
-      <h1>Dashboard</h1>
-
+  <div class="row justify-content-center">
+    <div id="dashboard" class="col col-md-10 mt-5 shadow panel">
+      <div class="header">
+        <h1 class="text-center mb-3">Dashboard</h1>
+      </div>
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Upcoming bookings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past bookings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-        </li>
-      </ul>
+      <div class="d-flex justify-content-center">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-dash">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Upcoming bookings</a>
+          </li>
+          <li class="nav-dash">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past bookings</a>
+          </li>
+        </ul>
+      </div>
 
+      <hr>
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="container pt-5">
             <div class="row justify-content-center">
               <div class="col">
-                <h2 class="mb-4">Upcoming bookings:</h2>
+                <% unless @upcoming_bookings.empty? %>
+                <h3 class="mb-4">My upcoming bookings:</h3>
                 <div class="card-wrap products">
                   <% @upcoming_bookings.each do |b| %>
                   <%= link_to booking_path(b) do %>
                   <div class="card-product">
-                    <%= image_tag(b.butler.picture) %>
+                    <%= cl_image_tag b.butler.photo.key, height: 200, width: 200 %>
                     <div class="card-product-infos">
                       <h2><%= b.butler.name %></h2>
                       <b><%= b.price %> €</b>
-                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                      <p><%= b.start_date.strftime("%d.%m.%Y") %> – <%= b.end_date.strftime("%d.%m.%Y") %></p>
                     </div>
                   </div>
                   <% end %>
                   <% end %>
                 </div>
+                <% else %>
+                <h3>No upcoming bookings yet!</h3>
+                <%= link_to "Book a penguin butler now", search_path, class: "btn btn-primary" %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -46,29 +52,30 @@
           <div class="container pt-5">
             <div class="row justify-content-center">
               <div class="col">
-                <h2 class="mb-4">My past bookings:</h2>
+                <% unless @past_bookings.empty? %>
+                <h3 class="mb-4">My past bookings:</h3>
                 <div class="card-wrap products">
                   <% @past_bookings.each do |b| %>
                   <%= link_to booking_path(b) do %>
                   <div class="card-product">
-                    <%= image_tag(b.butler.picture) %>
+                    <%= cl_image_tag b.butler.photo.key, height: 200, width: 200 %>
                     <div class="card-product-infos">
                       <h2><%= b.butler.name %></h2>
                       <b><%= b.price %> €</b>
-                      <p><%= b.start_date %> – <%= b.end_date %></p>
+                      <p><%= b.start_date.strftime("%d.%m.%Y") %> – <%= b.end_date.strftime("%d.%m.%Y") %></p>
                     </div>
                   </div>
                   <% end %>
                   <% end %>
                 </div>
+                <% else %>
+                <h3>No past bookings yet!</h3>
+                <%= link_to "Book a penguin butler now", search_path, class: "btn btn-primary" %>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">4</div>
       </div>
-
     </div>
   </div>
-</div>

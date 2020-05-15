@@ -8,6 +8,11 @@
  top: -25px;
  left: -50px;
  z-index: 100;
+
+ &.right {
+  left: auto;
+  right: -35px;
+ }
 }
 
 .booking-form {
@@ -33,6 +38,12 @@
 }
 
 h1 {
-    margin-bottom: 0;
-    font-size: 46px;
+  margin-bottom: 0;
+  font-size: 46px;
+}
+
+.booking-table {
+  td {
+    padding-right: 15px;
   }
+}
