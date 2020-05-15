@@ -7,11 +7,15 @@
   border-color: $primary;
   &:hover,
   &:active,
-  &:focus {
+  &:focus,
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
     background-color: $primary--light;
     border-color: $primary--light;
   }
 }
+
+
 
 .btn-secondary {
   background-color: transparent;

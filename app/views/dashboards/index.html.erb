@@ -3,6 +3,11 @@
     <div id="dashboard" class="col col-md-10 mt-5 shadow panel">
       <div class="header">
         <h1 class="text-center mb-3">Dashboard</h1>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-danger">
+            <%= msg %>
+          </div>
+        <% end %>
       </div>
       <!-- Nav tabs -->
       <div class="d-flex justify-content-center">
@@ -79,3 +84,4 @@
       </div>
     </div>
   </div>
+</div>
