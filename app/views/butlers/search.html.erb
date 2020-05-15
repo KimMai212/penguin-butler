@@ -1,7 +1,28 @@
 <div id="search" class="container pt-5">
   <div class="row justify-content-center">
     <div class="col-md-10 panel shadow">
-      <h1 class="text-center mb-4">Matching butlers:</h1>
+      <h1 class="text-center mb-5">Find your new butler today!</h1>
+      <div class="row justify-content-center mb-5">
+        <div class="search-form text-right">
+          <%= form_tag search_path, method: :get, class: "form-inline" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control mb-3 input-big flex-grow-1",
+              placeholder: "Where do you live?"
+            %>
+            <%= submit_tag "Find a butler", class: "btn btn-primary btn-big mb-3" %>
+          <% end %>
+          <% if params[:query].present? %>
+            <%= link_to "Show all butlers", search_path, class: "btn btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+      <hr class="mb-5">
+      <% if params[:query].present? %>
+        <h2 class="text-center mb-4">Matching butlers:</h2>
+      <% else %>
+        <h2 class="text-center mb-4">All butlers:</h2>
+      <% end %>
       <div class="card-wrap">
         <% @butlers.each do |b| %>
           <%= link_to butler_path(b) do %>
