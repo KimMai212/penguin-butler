@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 Butler.destroy_all
+puts "All butlers have been deleted."
 User.destroy_all
+puts "All users have been deleted."
 Booking.destroy_all
+puts "All bookings have been deleted."
 
 puts "All entries have been deleted."
 
@@ -31,5 +34,21 @@ n = 1
   puts "#{butler.name} was created!"
   n += 1
 end
+
+leon = Butler.new({
+  name: "Leon Entrup",
+  description: "Friedrich loves Gordon Ramsay and has mastered the art of Parmigiana di Melanzane for him.",
+  price: 200,
+  age: 29,
+  years_of_experience: 30,
+  academic_grade: "Bootcamp graduate",
+  address: Faker::Address.street_address,
+  zipcode: Faker::Address.zip,
+  city: "Munich",
+  country: "Germany"
+})
+leon.photo.attach(io: File.open("app/assets/images/leon.jpg"), filename: "leon.jpg", content_type: 'image/jpeg')
+leon.save!
+puts "Leon was created!"
 
 puts "Seeding completed!"
