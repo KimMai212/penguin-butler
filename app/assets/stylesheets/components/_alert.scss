@@ -1,3 +1,30 @@
 .alert {
   z-index: 1000;
+  width: 300px;
+  border-radius: 8px;
+  margin: auto;
+  position: absolute;
+  right: 20px;
+  top: 90px;
+
+  button {
+    color: #248352;
+  }
+
+  &.alert-notice {
+    color: $dark-gray;
+    background-color: $light-gray;
+    border-color: $dark-gray;
+    button {
+      color: $dark-gray;
+    }
+  }
+  &.alert-alert {
+    color: $primary;
+    background-color: $primary--lighter;
+    border-color: $primary--lighter;
+    button {
+      color: $primary;
+    }
+  }
 }
