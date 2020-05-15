@@ -6,6 +6,17 @@ class ButlersController < ApplicationController
   end
 
   def search
-    @butlers = Butler.all
+    if params[:query].present?
+      @butlers = Butler.where("city ILIKE ?", "%#{params[:query]}%")
+
+    else
+      @butlers = Butler.all
+    end
+  end
+
+  private
+
+  def butler_params
+
   end
 end

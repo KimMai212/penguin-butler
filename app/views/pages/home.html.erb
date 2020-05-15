@@ -2,12 +2,15 @@
   <div class="search-section">
     <p class="h1 search-title">Always wanted a capable butler?</p>
     <p class="h2 search-title">Look no further!</p>
-    <form id="search-form" class="simple_form form-inline my-5" novalidate="novalidate" accept-charset="UTF-8" action="/search" method="post"> <input name="utf8" type="hidden" value="✓">
-      <span class="string required home_search_keyword flex-grow-1">
-        <input class="form-control transparent-input string required w-100" type="text" name="keyword" id="home_search_keyword" placeholder="Where do you live?">
-      </span>
-      <input type="submit" name="commit" value="Find butlers" class="btn btn-primary" data-disable-with="Find the perfect drink">
-    </form>
+
+    <%= form_tag search_path, method: :get, class: "form-inline my-4" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control transparent-input flex-grow-1 flex-shrink-1",
+        placeholder: "Where do you live?"
+      %>
+      <%= submit_tag "Find butlers", class: "btn btn-primary" %>
+    <% end %>
   </div>
   <a href="#content" id="scroll-down"><i class="fas fa-chevron-down"></i></a>
 </div>
