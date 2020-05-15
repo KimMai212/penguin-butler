@@ -22,7 +22,7 @@
         <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="container pt-5">
             <div class="row justify-content-center">
-              <div class="col">
+              <div class="col text-center">
                 <% unless @upcoming_bookings.empty? %>
                 <h3 class="mb-4">My upcoming bookings:</h3>
                 <div class="card-wrap products">
@@ -51,7 +51,7 @@
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <div class="container pt-5">
             <div class="row justify-content-center">
-              <div class="col">
+              <div class="col text-center">
                 <% unless @past_bookings.empty? %>
                 <h3 class="mb-4">My past bookings:</h3>
                 <div class="card-wrap products">
@@ -69,7 +69,7 @@
                   <% end %>
                 </div>
                 <% else %>
-                <h3>No past bookings yet!</h3>
+                <h3 class="mb-3">No past bookings yet!</h3>
                 <%= link_to "Book a penguin butler now", search_path, class: "btn btn-primary" %>
                 <% end %>
               </div>
@@ -79,3 +79,4 @@
       </div>
     </div>
   </div>
+</div>
