@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       @booking.status = "Pending host validation"
       if @booking.end_date && @booking.start_date
-        @booking.price = (@booking.end_date - @booking.start_date).to_f * @booking.butler.price.to_f
+        @booking.price = (@booking.end_date - @booking.start_date + 1).to_f * @booking.butler.price.to_f
       else
         @booking.price = @butler.price
       end
@@ -32,6 +32,7 @@ class BookingsController < ApplicationController
 
     def update
       @booking.update(booking_params)
+      @booking.price = (@booking.end_date - @booking.start_date + 1).to_f * @booking.butler.price.to_f
       if @booking.save!
         flash[:success] = "Booking edited!"
         redirect_to booking_path(@booking)
