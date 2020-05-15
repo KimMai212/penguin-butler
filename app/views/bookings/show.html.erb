@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 mt-5 panel shadow">
+      <% flash.each do |type, msg| %>
+          <div class="alert alert-success">
+            <%= msg %>
+          </div>
+        <% end %>
       <h1 class="mb-3">Your booking # <%= @booking.id %></h1>
       <div class="profile-picture right" style="background-image: url('<%= cl_image_path @booking.butler.photo.key, height: 500, width: 500 %>');"></div>
       <table class="booking-table">

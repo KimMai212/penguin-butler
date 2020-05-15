@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
     def update
       @booking.update(booking_params)
       if @booking.save!
+        flash[:alert] = "Booking edited!"
         redirect_to booking_path(@booking)
       else
         render edit
@@ -39,6 +40,7 @@ class BookingsController < ApplicationController
 
     def destroy
       @booking.destroy
+      flash[:alert] = "Booking deleted!"
       redirect_to dashboard_path
     end
 
