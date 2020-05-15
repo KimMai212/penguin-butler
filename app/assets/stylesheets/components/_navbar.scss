@@ -9,16 +9,16 @@
 }
 
 .navbar-brand img {
-  width: 40px;
+  width: 256px;
 }
 
 .navbar-light {
   .navbar-brand {
     position: absolute;
-    left: calc(50% - 20px);
-    right: calc(50% - 20px);
+    left: calc(50% - 128px);
+    right: calc(50% - 128px);
     margin: 0;
-    width: 40px;
+    width: 256px;
   }
 }
 
